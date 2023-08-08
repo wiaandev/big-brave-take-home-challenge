@@ -1,0 +1,13 @@
+@import '../../Assets/base.scss';
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $primary;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: $secondary;
+    padding: 50px;
+    width: fit-content;
+}

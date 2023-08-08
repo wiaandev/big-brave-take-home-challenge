@@ -1,0 +1,43 @@
+@import '../../Assets/base.scss';
+
+.primary{
+    background-color: $primary;
+    font-size: $heading4;
+    color: $background;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+.primary::placeholder{
+    color: $secondary;
+    font-style: italic;
+}
+
+.primary:active{
+    background-color: $secondary;
+    outline: none;
+}
+
+.primary:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.secondary{
+    padding: 5%;
+    color: $background;
+    border: none;
+    font-size: $headingp;
+    background-color: $primary;
+    border-radius: 50px;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+    height: 50px;
+}
+
+.secondary:hover{
+    cursor: pointer;
+}

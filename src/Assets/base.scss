@@ -1,0 +1,68 @@
+$heading1: 48px;
+$heading2: 36px;
+$heading3: 24px;
+$heading4: 16px;
+$headingp: 14px;
+
+// Colors
+$text: #0e0420;
+$background: #ffffff;
+$primary: #3f1390;
+$secondary: #d3c0f7;
+$accent: #5a1bd0;
+$error: #f06d6d;
+$alpha: 0.5;
+
+$font-weight-thin: 300;
+$font-weight-regular: 400; 
+$font-weight-bold: 700;
+
+.App{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+* {
+    scroll-behavior: smooth;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    ul, li, a{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style-type: none;
+        display: inline;
+        display: flex;
+        gap: 50px;
+        transition: 0.1s ease-in-out;
+    }
+}
+
+h1 {
+font-size: $heading1;
+}
+
+h2 {
+font-size: $heading2;
+}
+
+h3 {
+font-size: $heading3;
+font-weight: $font-weight-thin;
+}
+
+h4 {
+font-size: $heading4;
+font-weight: $font-weight-thin;
+padding: 0;
+margin: 0;
+}
+
+.p1, p, label {
+font-size: $headingp;
+color: $primary;
+}

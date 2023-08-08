@@ -1,0 +1,48 @@
+@import "../../Assets/base.scss";
+
+.container {
+  flex: 1;
+  background-color: $background;
+  display: flex;
+  flex-flow: row;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
+  .left {
+    width: 30%;
+    background-color: $primary;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .error{
+    padding: 5px;
+    background-color: $error;
+    color: white;
+  }
+
+  .dropdown{
+    padding: 20px;
+    outline: none;
+    border: 1px solid $accent;
+    border-radius: 10px;
+
+  }
+}
