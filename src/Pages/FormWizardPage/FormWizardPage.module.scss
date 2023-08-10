@@ -24,25 +24,24 @@
     padding: 50px;
     justify-content: center;
     align-items: center;
-  }
 
-  .form{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+    .form {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
 
-  .error{
-    padding: 5px;
-    background-color: $error;
-    color: white;
-  }
+      .error {
+        padding: 5px;
+        background-color: $error;
+        color: white;
+      }
 
-  .dropdown{
-    padding: 20px;
-    outline: none;
-    border: 1px solid $accent;
-    border-radius: 10px;
-
+      .dropdown {
+        padding: 20px;
+        outline: none;
+        border: 1px solid $accent;
+        border-radius: 10px;
+      }
+    }
   }
 }
