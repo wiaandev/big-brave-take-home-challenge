@@ -1,65 +1,83 @@
-@import '../../Assets/base.scss';
+@import "../../Assets/base.scss";
 
-.primary{
-    padding: 4%;
-    border: 1px solid $accent;
-    color: $accent;
-    font-size: $heading4;
-    background-color: transparent;
-    border-radius: 20px;
-    width: 100%;
-    transition: 0.2s ease-in-out;
-    height: 50px;
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: $primary;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid $primary;
+  border-radius: 50%;
 }
 
-.primary::placeholder{
-    color: gray;
-    font-style: italic;
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid $primary;
+  outline-offset: max(2px, 0.15em);
+  background-color: $primary;
+}
+  
+
+.primary {
+  padding: 4%;
+  border: 1px solid $secondary;
+  color: $accent;
+  font-size: $heading4;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  height: 50px;
 }
 
-.primary:focus{
-    background-color: white;
-    outline: none;
-    border: 2px solid $accent;
+.primary::placeholder {
+  color: gray;
+  font-style: italic;
 }
 
-.primary:hover{
-    border: 2px solid $accent;
+.primary:focus {
+  background-color: white;
+  outline: none;
+  border: 2px solid $accent;
 }
 
-.secondary{
-    padding: 3%;
-    border: 2px solid $accent;
-    color: $accent;
-    font-size: $heading4;
-    background-color: transparent;
-    border-radius: 50px;
-    width: 100%;
-    transition: 0.2s ease-in-out;
-    height: 50px;
+.primary:hover {
+  border: 2px solid $accent;
 }
 
-.secondary::placeholder{
-    color: $accent;
-    font-style: italic;
+.secondary {
+  padding: 3%;
+  border: 2px solid $accent;
+  color: $accent;
+  font-size: $heading4;
+  background-color: transparent;
+  border-radius: 50px;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  height: 50px;
 }
 
-.secondary:focus{
-    background-color: white;
-    outline: none;
-    border: 2px solid $accent;
+.secondary::placeholder {
+  color: $accent;
+  font-style: italic;
 }
 
-.secondary:hover{
-    border: 2px solid $accent;
+.secondary:focus {
+  background-color: white;
+  outline: none;
+  border: 2px solid $accent;
 }
 
-.radio{
-    background-color: red;
-    border: 2px green solid;
+.secondary:hover {
+  border: 2px solid $accent;
 }
 
-.radio:checked{
-    background-color: red;
-    border: 2px green solid;
+.radio {
+  background-color: red;
+  border: 2px green solid;
+}
+
+.radio:checked {
+  background-color: red;
+  border: 2px green solid;
 }

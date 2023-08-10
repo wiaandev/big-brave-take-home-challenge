@@ -27,6 +27,7 @@
 
     .form {
       display: flex;
+      flex-flow: column;
       gap: 20px;
       flex-wrap: wrap;
 
@@ -41,6 +42,11 @@
         outline: none;
         border: 1px solid $accent;
         border-radius: 10px;
+      }
+
+      .flex {
+        display: flex;
+        gap: 10px;
       }
     }
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./LandingPage.module.scss";
-import img from "../../Assets/background.jpg";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom"; // this will be used to navigate the user to the directed page
 import ReqCard from "../../Components/ReqCard/ReqCard";
