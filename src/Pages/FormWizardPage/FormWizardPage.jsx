@@ -5,17 +5,88 @@ import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import { CompactPicker } from "react-color";
 import AnimatedBackground from "../../Components/AnimatedBackground/AnimatedBackground";
+import { useNavigate } from "react-router-dom"; // using this to navigate the user if all the fields are entered
+
+const defaultValues = {
+  firstName: "",
+  lastName: "",
+  gender: "",
+  date: "",
+  occupation: "",
+  color: "#000000",
+};
+
+const errorValues = {
+  firstNameErr: "",
+  lastNameErr: "",
+  genderErr: "",
+  dateErr: "",
+  occupationErr: "",
+};
 
 export default function FormWizardPage() {
-  const [color, setColor] = useState("");
+  const occupations = [
+    "Chef",
+    "Yoga Instructor",
+    "Developer",
+    "Social Media Beinvloeder",
+  ];
+
+  const navigate = useNavigate();
+
+  const [values, setValues] = useState(defaultValues);
+  const [errVals, setErrVals] = useState(errorValues);
+  const { firstNameErr, lastNameErr, genderErr, dateErr, occupationErr } =
+    errVals;
+  const { firstName, lastName, gender, date, occupation, color } = values;
+
+  const onChangeColor = (newColor) => {
+    setValues({ ...values, color: newColor.hex });
+    console.log(color);
+  };
+
+  const changeValues = (e) => {
+    const { name, value } = e.target;
+    setValues((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }));
+
+    console.log(name, " :", value);
+  };
+
+  const validate = (value, errorMessage) => {
+    if (value === "") {
+      return errorMessage;
+    }
+    return "";
+  };
 
   const onGetResults = () => {
     console.log("Hell yeah brother");
-  };
+    console.log(values);
 
-  const onChangeColor = (newColor) => {
-    setColor(newColor.hex);
-    console.log(color);
+    if (
+      values.firstName === "" ||
+      values.lastName === "" ||
+      values.gender === "" ||
+      values.date === ""
+    ) {
+      const nameError = validate(values.firstName, "Enter your first name");
+      const surnameError = validate(values.lastName, "Enter surname");
+      const dateError = validate(values.date, "Date cannot be empty");
+      const genderError = validate(values.gender, "pick a sex");
+
+      setErrVals({
+        ...errVals,
+        nameError,
+        surnameError,
+        dateError,
+        genderError,
+      });
+    } else {
+      navigate("/character");
+    }
   };
 
   return (
@@ -29,44 +100,78 @@ export default function FormWizardPage() {
 
         <form className={style.form}>
           <div className={style.flex}>
-            <Input text="hello" type="primary" placeholder="First Name" />
-            <Input text="hello" type="primary" placeholder="Last Name" />
+            <div className={style.flexCol}>
+              <Input
+                name={"firstName"}
+                value={firstName}
+                text="hello"
+                type="primary"
+                placeholder="First Name"
+                onChange={changeValues}
+              />
+              <p className={style.error}>{errVals.nameError}</p>
+            </div>
+            <div className={style.flexCol}>
+              <Input
+                name={"lastName"}
+                value={lastName}
+                text="hello"
+                type="primary"
+                placeholder="Last Name"
+                onChange={changeValues}
+              />
+              <br />
+              <p className={style.error}>{errVals.surnameError}</p>
+            </div>
           </div>
-
           <div className={style.flex}>
-            <Input inputType="radio" value="male" />
+            <Input
+              name="gender"
+              value="male"
+              inputType="radio"
+              onChange={changeValues}
+            />
             <p>Male</p>
           </div>
           <div className={style.flex}>
-            <Input inputType="radio" value="female" />
+            <Input
+              name="gender"
+              value="female"
+              inputType="radio"
+              onChange={changeValues}
+            />
             <p>Female</p>
+            <p>{errVals.firstNameErr}</p>
           </div>
-          <div className={style.flex}>
-            <Input inputType="radio" value="rather not say" />
-            <p>Other</p>
-          </div>
-
+          <p className={style.error}>{errVals.genderError}</p>
           <Input
+            name="date"
+            value={date}
             text="hello"
             type="primary"
-            placeholder="First Name"
             inputType="date"
+            onChange={changeValues}
           />
-
-          <select>
-            <option>Hello</option>
-            <option>Hello</option>
-            <option>Hello</option>
-            <option>Hello</option>
+          <p className={style.error}>{errVals.dateError}</p>
+          <select
+            className={style.dropdown}
+            name="occupation"
+            value={occupation}
+            onChange={changeValues}
+          >
+            {occupations.map((job) => (
+              <option key={job} value={job}>
+                {job}
+              </option>
+            ))}
           </select>
 
+          <CompactPicker color={color} onChange={onChangeColor} />
         </form>
 
-        <CompactPicker color={color} onChange={onChangeColor} />
-
-        <Link to={"/character"}>
-          <Button text="Let's Start" type="primary" onClick={onGetResults()} />
-        </Link>
+        {/* <Link to={"/character"}> */}
+        <Button text="Let's Start" type="primary" onClick={onGetResults} />
+        {/* </Link> */}
       </div>
     </div>
   );

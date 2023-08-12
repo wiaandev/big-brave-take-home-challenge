@@ -4,6 +4,7 @@ import style from './Input.module.scss'
 const Input =  forwardRef((props, ref) => {
     return (
       <input
+
           type={props.inputType}
           placeholder={props.placeholder}
           defaultValue={props.defaultValue}
