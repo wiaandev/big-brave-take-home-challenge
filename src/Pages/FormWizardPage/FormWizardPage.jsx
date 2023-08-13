@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import style from "./FormWizardPage.module.scss";
-import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import { CompactPicker } from "react-color";
@@ -37,7 +36,7 @@ export default function FormWizardPage() {
 
   const [values, setValues] = useState(defaultValues);
   const [errVals, setErrVals] = useState(errorValues);
-  const { gender, date, occupation, color } = values;
+  const { date, occupation, color } = values;
 
   const onChangeColor = (newColor) => {
     setValues({ ...values, color: newColor.hex });
