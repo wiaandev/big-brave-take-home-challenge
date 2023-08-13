@@ -7,7 +7,7 @@
     padding: 20px;
     border-radius: 10px;
     border: none;
-    width: 100%;
+    width: 20%;
     transition: 0.2s ease-in-out;
 }
 
@@ -23,7 +23,7 @@
 
 .primary:hover{
     cursor: pointer;
-    transform: scale(1.1);
+    background-color: $text;
 }
 
 .secondary{

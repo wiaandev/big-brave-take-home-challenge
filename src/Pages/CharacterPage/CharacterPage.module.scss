@@ -1,37 +1,55 @@
-@import '../../Assets/base.scss';
+@import "../../Assets/base.scss";
 
-.container{
-    flex: 1;
-    background-color: $background;
-    display: flex;
-    flex-flow: row;
+.container {
+  flex: 1;
+  background-color: $background;
+  display: flex;
+  flex-flow: row;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
+  .left {
+    width: 30%;
+    background-color: $primary;
     height: 100vh;
-    overflow: hidden;
-    width: 100%;
+    object-fit: cover;
+  }
 
-    .left{
-        width: 30%;
-        background-color: $primary;
-        height: 100vh;
-        object-fit: cover;
-    }
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
 
-    .right{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 70%;
-        padding: 50px;
-        justify-content: center;
-        align-items: center;
+    .flexCol {
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+      justify-content: center;
+      align-items: center;
+      .shirt {
+        margin: 0;
+        z-index: 1;
+      }
+      .pants {
+        z-index: 0;
+        width: 100px;
+        margin-top: -30px;
+        margin-left: 15px;
+      }
     }
+  }
 
-    .flex{
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0px 20px;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-    }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
 }
