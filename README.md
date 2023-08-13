@@ -1,4 +1,4 @@
-#[Here is the hosted application on Vercel](https://big-brave-take-home-challenge.vercel.app/)
+# [Here is the hosted application on Vercel](https://big-brave-take-home-challenge.vercel.app/)
 <br />
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/wiaandev/big-brave-take-home-challenge?color=yellow)
