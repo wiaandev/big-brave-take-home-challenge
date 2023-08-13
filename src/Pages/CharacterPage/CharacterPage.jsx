@@ -92,7 +92,7 @@ export default function CharacterPage() {
         </p>
         <Link to={"/"}>
           <Button
-            text="Let's Start"
+            text="Start Over"
             type="primary"
             onClick={onNavigateToForm()}
           />
